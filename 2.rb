@@ -16,3 +16,16 @@
 #
 ## Решение:
 
+require 'digest'
+
+md5 = Digest::MD5.new
+
+start = gets()
+count = 0
+extra = ''
+while !(md5.hexdigest(start + extra).start_with? '00000')
+    count += 1
+    extra = count.to_s
+end
+
+puts count

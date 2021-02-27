@@ -16,4 +16,17 @@
 #
 ## Решение:
 
+def paper(w, h, l)
+    some = [w*h, h*l, l*w]
+    return (some.inject(0) {|sum, n| sum + n})*2 + some.min
+end
 
+result = 0
+File.open("data/4.txt", 'r') do |file|
+    for line in file.readlines()
+        w, h, l = line.split('x').map(&:to_i)
+        result += paper(w, h, l)
+    end
+end
+
+puts result

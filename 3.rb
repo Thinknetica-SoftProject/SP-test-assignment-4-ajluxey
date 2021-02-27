@@ -10,4 +10,13 @@
 #
 ## Решение:
 
+result = 0
+File.open("data/3.txt", 'r') do |file|
+    for line in file.readlines()
+        nums = line.split()
+        nums = nums.map(&:to_i)
+        result += nums.max - nums.min
+    end
+end
 
+puts result
