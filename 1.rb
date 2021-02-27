@@ -16,8 +16,9 @@
 #
 ## Решение:
 
+result = 0
+
 File.open("data/1.txt", "r") do |file|
-    result = 0
     file.each_char do |char|
         if char == "("
             result += 1    
@@ -27,4 +28,4 @@ File.open("data/1.txt", "r") do |file|
     end
 end
 
-puts(result)
+puts result
